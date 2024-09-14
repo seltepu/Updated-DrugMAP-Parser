@@ -79,6 +79,6 @@ for line in data[start_line:]:
         # Resetting all variables to None to get values for upcoming JSON objects and adding them to array
         dme_id = dme_name = drug_id = drug_name = reference_name = reference_url = None
 
-# outputting the JSON object
-print(json.dumps(array_json_objects, indent=2))
-
+# outputting the JSON object into a file
+with open('formatted_json_array.json', 'w') as f:
+    json.dump(array_json_objects, f, indent=2)
